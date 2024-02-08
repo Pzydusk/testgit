@@ -1,0 +1,6 @@
+@KingPriceTest_HostAddress = http://localhost:5001
+
+GET {{KingPriceTest_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

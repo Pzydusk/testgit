@@ -1,0 +1,34 @@
+﻿@page
+@model KingPriceTestWeb.Pages.UserIndexModel
+@{
+    ViewData["Title"] = "User Management";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>User ID</th>
+            <th>User Name</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var user in Model.Users)
+        {
+            <tr>
+                <td>@user.UserId</td>
+                <td>@user.UserName</td>
+                <td>
+                    <a asp-page="./Edit" asp-route-id="@user.UserId">Edit</a> |
+                    <a asp-page="./Delete" asp-route-id="@user.UserId">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
